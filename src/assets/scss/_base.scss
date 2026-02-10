@@ -29,17 +29,37 @@ body {
 }
 
 #app {
-  background: linear-gradient(
-    135deg,
-    $color-navy-blue 0%,
-    $color-royal-blue 50%,
-    $color-navy-blue 100%
-  );
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 212, 228, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 40%),
+    linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(10, 31, 92, 0.98) 25%, rgba(10, 31, 92, 1) 50%, rgba(30, 58, 138, 0.95) 100%),
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.01) 2px, rgba(255, 255, 255, 0.01) 4px),
+    linear-gradient(180deg, $color-navy-blue 0%, lighten($color-navy-blue, 5%) 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+  position: relative;
   color: $color-text-light;
   padding: 0 3.125rem;
   min-height: 100%;
   overflow: hidden;
   @include flex-center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    background-position: 0 0, 40px 40px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
 
   @media #{$mobile} {
     padding: 0 5%;

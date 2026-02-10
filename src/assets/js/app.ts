@@ -98,6 +98,7 @@ import SoundEffects from '@js/SoundEffects';
   const slot = new Slot({
     reelContainerSelector: '#reel',
     maxReelItems: MAX_REEL_ITEMS,
+    numberOfSlots: 6,
     onSpinStart,
     onSpinEnd,
     onNameListChanged: stopWinningAnimation
@@ -119,7 +120,7 @@ import SoundEffects from '@js/SoundEffects';
 
   // Click handler for "Draw" button
   drawButton.addEventListener('click', () => {
-    if (!slot.names.length) {
+    if (slot.names.length < 6) {
       onSettingsOpen();
       return;
     }
