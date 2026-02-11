@@ -1,9 +1,13 @@
 // scale factor
+$ultra-wide-scale-factor: 1.8;
+$large-desktop-scale-factor: 1.4;
 $medium-desktop-scale-factor: 0.8;
 $small-desktop-scale-factor: 0.66;
 $tablet-scale-factor: 0.5;
 $mobile-scale-factor: 0.288;
 $scale-factors: (
+  'ultra-wide': $ultra-wide-scale-factor,
+  'large-desktop': $large-desktop-scale-factor,
   'medium-desktop': $medium-desktop-scale-factor,
   'small-desktop': $small-desktop-scale-factor,
   'tablet': $tablet-scale-factor,

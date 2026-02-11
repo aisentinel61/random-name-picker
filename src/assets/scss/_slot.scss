@@ -14,7 +14,17 @@
   text-align: center;
 
   @each $name, $factor in $scale-factors {
-    @if $name == 'medium-desktop' {
+    @if $name == 'ultra-wide' {
+      @media #{$ultra-wide} {
+        max-width: 400px * $factor;
+        margin: 1rem * $factor auto 0.5rem * $factor;
+      }
+    } @else if $name == 'large-desktop' {
+      @media #{$large-desktop} {
+        max-width: 400px * $factor;
+        margin: 1rem * $factor auto 0.5rem * $factor;
+      }
+    } @else if $name == 'medium-desktop' {
       @media #{$medium-desktop} {
         max-width: 400px * $factor;
         margin: 1rem * $factor auto 0.5rem * $factor;
@@ -63,7 +73,17 @@
     0 0 20px rgba(0, 229, 255, 0.5);
 
   @each $name, $factor in $scale-factors {
-    @if $name == 'medium-desktop' {
+    @if $name == 'ultra-wide' {
+      @media #{$ultra-wide} {
+        font-size: 3rem * $factor;
+        margin: 0.5rem * $factor 0 1.5rem * $factor;
+      }
+    } @else if $name == 'large-desktop' {
+      @media #{$large-desktop} {
+        font-size: 3rem * $factor;
+        margin: 0.5rem * $factor 0 1.5rem * $factor;
+      }
+    } @else if $name == 'medium-desktop' {
       @media #{$medium-desktop} {
         font-size: 3rem * $factor;
         margin: 0.5rem * $factor 0 1.5rem * $factor;
@@ -100,7 +120,15 @@
   position: relative;
 
   @each $name, $factor in $scale-factors {
-    @if $name == 'medium-desktop' {
+    @if $name == 'ultra-wide' {
+      @media #{$ultra-wide} {
+        gap: 1rem * $factor;
+      }
+    } @else if $name == 'large-desktop' {
+      @media #{$large-desktop} {
+        gap: 1rem * $factor;
+      }
+    } @else if $name == 'medium-desktop' {
       @media #{$medium-desktop} {
         gap: 1rem * $factor;
       }
@@ -128,7 +156,15 @@
   width: 100%;
 
   @each $name, $factor in $scale-factors {
-    @if $name == 'medium-desktop' {
+    @if $name == 'ultra-wide' {
+      @media #{$ultra-wide} {
+        gap: 1rem * $factor;
+      }
+    } @else if $name == 'large-desktop' {
+      @media #{$large-desktop} {
+        gap: 1rem * $factor;
+      }
+    } @else if $name == 'medium-desktop' {
       @media #{$medium-desktop} {
         gap: 1rem * $factor;
       }
@@ -218,7 +254,29 @@
   }
 
   @each $name, $factor in $scale-factors {
-    @if $name == 'medium-desktop' {
+    @if $name == 'ultra-wide' {
+      @media #{$ultra-wide} {
+        width: $slot-width * $factor;
+        height: $slot-height * $factor;
+        margin: 0 auto;
+
+        &__outer {
+          transform: scale($factor);
+          transform-origin: top left;
+        }
+      }
+    } @else if $name == 'large-desktop' {
+      @media #{$large-desktop} {
+        width: $slot-width * $factor;
+        height: $slot-height * $factor;
+        margin: 0 auto;
+
+        &__outer {
+          transform: scale($factor);
+          transform-origin: top left;
+        }
+      }
+    } @else if $name == 'medium-desktop' {
       @media #{$medium-desktop} {
         width: $slot-width * $factor;
         height: $slot-height * $factor;
@@ -306,7 +364,27 @@
   z-index: $z-index-draw-button; // make sure draw button on top of sunburst
 
   @each $name, $factor in $scale-factors {
-    @if $name == 'medium-desktop' {
+    @if $name == 'ultra-wide' {
+      @media #{$ultra-wide} {
+        width: $draw-button-width * $factor;
+        margin: 2rem * $factor 0 1rem * $factor;
+        font-size: max((1.75rem * $factor), 1rem);
+        line-height: max((1.75rem * $factor), 1rem);
+        padding: 1rem * $factor 0.625rem * $factor;
+        border-radius: 0.625rem * $factor;
+        @include shadow('large', $factor);
+      }
+    } @else if $name == 'large-desktop' {
+      @media #{$large-desktop} {
+        width: $draw-button-width * $factor;
+        margin: 2rem * $factor 0 1rem * $factor;
+        font-size: max((1.75rem * $factor), 1rem);
+        line-height: max((1.75rem * $factor), 1rem);
+        padding: 1rem * $factor 0.625rem * $factor;
+        border-radius: 0.625rem * $factor;
+        @include shadow('large', $factor);
+      }
+    } @else if $name == 'medium-desktop' {
       @media #{$medium-desktop} {
         width: $draw-button-width * $factor;
         margin: 2rem * $factor 0 1rem * $factor;

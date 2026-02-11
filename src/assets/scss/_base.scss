@@ -108,6 +108,14 @@ body {
   max-width: $screen-xl;
   flex: 1 1 0;
   min-height: min-content;
+
+  @media #{$large-desktop} {
+    max-width: $screen-xxl;
+  }
+
+  @media #{$ultra-wide} {
+    max-width: $screen-xxxl;
+  }
 }
 
 .footer {
